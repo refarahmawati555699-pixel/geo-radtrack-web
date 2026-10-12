@@ -52,11 +52,10 @@ export default function MapView({ data, layers, sel, onSelect }) {
       if (cancelled || !el.current) return;
       Lref.current = L;
       const map = L.map(el.current).setView([-6.85, 109.5], 8);
-      const dark = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-        subdomains: "abcd",
+      const dark = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
         maxZoom: 19,
-        crossOrigin: true,
+        className: "tiles-dark",
       });
       const street = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap contributors",
