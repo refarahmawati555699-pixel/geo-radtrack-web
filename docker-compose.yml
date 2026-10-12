@@ -1,0 +1,20 @@
+# PostGIS untuk GEO-RADTRACK.
+# Port host 5433 dipakai supaya tidak bentrok dengan Postgres lokal (5432).
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: geo-radtrack-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: geo
+      POSTGRES_PASSWORD: geo123
+      POSTGRES_DB: georadtrack
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # File .sql di folder ini dijalankan otomatis SEKALI saat database pertama dibuat
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  pgdata:
