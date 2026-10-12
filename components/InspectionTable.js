@@ -37,8 +37,8 @@ export default function InspectionTable({ admin, inspections, sel, query, onSele
     <section className="block" aria-labelledby="judul-ins">
       <h2 id="judul-ins">Data Inspeksi Radiometri / NDT</h2>
       <p className="sub">
-        Titik ukur ketebalan dinding pipa (data simulasi). Kolom bertanda <b>otomatis</b> dihitung PostGIS: penipisan, status,
-        zona yang dilalui, jarak ke situs, dan izin kerja. {admin ? "Ubah ketebalan atau koordinat, lalu lihat statusnya berubah." : ""}
+        Titik ukur ketebalan dinding pipa (data simulasi). Kolom bertanda <b>otomatis</b> dihitung PostGIS: (penipisan, status,
+        zona yang dilalui, jarak ke situs, dan izin kerja) {admin ? "Ubah ketebalan atau koordinat, lalu lihat statusnya berubah." : ""}
       </p>
 
       <div className="toolbar">
@@ -80,13 +80,13 @@ export default function InspectionTable({ admin, inspections, sel, query, onSele
                 <td className="ro mono">{r.distanceM !== null ? r.distanceM : "-"}</td>
                 <td className="ro"><Chip style={permitStyle[r.permit]}>{r.permit}</Chip></td>
                 {admin && (
-                <td>
-                  <button type="button" className="icon-btn" aria-label={`Hapus ${r.code}`} onClick={() => onDelete(r.id)}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
-                    </svg>
-                  </button>
-                </td>
+                  <td>
+                    <button type="button" className="icon-btn" aria-label={`Hapus ${r.code}`} onClick={() => onDelete(r.id)}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+                      </svg>
+                    </button>
+                  </td>
                 )}
               </tr>
             ))}
@@ -99,7 +99,7 @@ export default function InspectionTable({ admin, inspections, sel, query, onSele
         </table>
       </div>
       <p className="hint">
-        Ambang status (asumsi simulasi): Waspada mulai penipisan 15%, Kritis mulai 30%. Ubah di tabel app_config (lihat README) atau minta kriteria asli dari Anggota Teknik Nuklir.
+        Ambang status (asumsi simulasi): Waspada mulai penipisan 15%, Kritis mulai 30%.
       </p>
     </section>
   );

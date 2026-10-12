@@ -282,7 +282,7 @@ export default function MapView({ data, layers, sel, onSelect }) {
         ) : null}
       </div>
       <p className="hint" style={{ margin: 0 }}>
-        Peta dan analisis zona dihitung PostGIS. Basemap butuh internet; lapisan data tetap tampil tanpa basemap.
+
       </p>
     </main>
   );

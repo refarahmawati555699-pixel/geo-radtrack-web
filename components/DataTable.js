@@ -44,9 +44,9 @@ export default function DataTable({ admin, features, rules, sel, query, onSelect
 
   return (
     <section className="block" aria-labelledby="judul-data">
-      <h2 id="judul-data">Sampel Data Spasial (Format JSON / CSV untuk Tim TI)</h2>
+      <h2 id="judul-data">Sampel Data Spasial </h2>
       <p className="sub">
-        Tabel simulasi koordinat untuk diolah tim TI ke dalam basis data PostGIS/WebGIS.
+
       </p>
 
       <div className="toolbar">
@@ -104,13 +104,13 @@ export default function DataTable({ admin, features, rules, sel, query, onSelect
                 </td>
                 <td className="ro mono">{radius(f.zone)}</td>
                 {admin && (
-                <td>
-                  <button type="button" className="icon-btn" aria-label={`Hapus ${f.segmentId}`} onClick={() => onDelete(f.id)}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
-                    </svg>
-                  </button>
-                </td>
+                  <td>
+                    <button type="button" className="icon-btn" aria-label={`Hapus ${f.segmentId}`} onClick={() => onDelete(f.id)}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+                      </svg>
+                    </button>
+                  </td>
                 )}
               </tr>
             ))}
